@@ -2,8 +2,7 @@
 // it is one the server that you create the routes
 
 
-//JS object for data endpoint for first routes
-firstApiData = {};
+
 
 //express to run server and routes
 const express = require('express');
@@ -32,3 +31,20 @@ function listening() {
 
 }
 
+//JS object for data endpoint for first API route
+firstApiData = {};
+
+//A GET route (requests data) uses url sheen requesting 
+//to send the data from the js-object "firstApiData"
+
+app.get('/', function getSomething (res, res){
+    response.send(firstApiData);
+});
+
+//a POST route using url sheen and app instance,
+// Posts requests send and store data
+
+app.post('/', function storeSomething(req, res){
+    console.log(req.body)
+    data.push(req.body)
+})
