@@ -1,9 +1,10 @@
 //client code represents all the code that the browser executes
 //client code represents all the code that the user will see
 
-const clientPostFirstApiData = async (url = '/', firstApiData = {})=>{
+//first Post Request
+const appSendServerData = async (url = '/', firstApiData = {})=>{
     console.log(firstApiData)
-    const response = await fetch(url, {
+    const response = await fetch(url,{
         method: 'POST',
         credentials: 'same-origin',
         headers: {
@@ -16,10 +17,11 @@ try {
     const newData = await response.json();
     console.log(newData);
     return newData
-}catch(error) {
+} catch(error) {
     console.log("error", error);
     //handle the error
 }
 }
 
-clientPostFirstApiData('/', {weather: "subjective}"})
+appSendServerData('/', {weather: "subjective"})
+

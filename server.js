@@ -28,22 +28,31 @@ function listening() {
 
 }
 
-//JS object for data endpoint for first API route
-const firstApiData = {};
+
 
 //A GET route (requests data) uses root url requesting 
 //to send the data from the js-object "firstApiData"
 
-app.get('/', function getSomething (res, res){
-    response.send(firstApiData);
-});
+//app.get('/', function getSomething (res, res){
+  //  response.send(firstApiData);
+//});
+
+//JS object for data endpoint for first API route
+const firstApiData = [];
 
 //a POST route using root url and app instance,
 // Post requests send and store data
 //i think they receieve data and store it and also send a specific response?
 
-app.post('/', function storeSomething(req, res){
-    FirstApiData.push(req.body)
-    console.log(firstApiData)
-    console.log("console should have logged identical things")
-})
+/*  app.post('/', function storeSomething(req, res){
+    firstApiData.push(req.body)
+    console.log(firstApiData);
+})  */
+
+
+app.post('/'), function StoreAsNewEntry (request, res) {
+ let newEntry = { weather: request.body.weather }
+ console.log("Server received", request.body);
+ firstApiData.push(newEntry)
+ console.log("Server now has all of these:", projectDataEndpoint)
+}
