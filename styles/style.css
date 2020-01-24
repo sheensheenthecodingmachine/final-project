@@ -1,0 +1,100 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    grid-template-columns: repeat(0.2fr);
+    grid-template-rows: auto;
+    text-align: center;
+    align-content: center;
+    background-color: antiquewhite;
+    color: #333;
+}
+
+header {
+    height: 20px;
+    background-color: #333;
+    grid-row: 1 / 1;
+    grid-column: 1 / 4;
+}
+
+.container {   
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    /* grid-template-columns:  */
+    height:100vh;
+    background-color: #f2f2f2;
+    justify-content: center;
+    grid-gap: 1em;
+    font-size: 20px;
+    }
+
+h1 {
+    font-size: 80px;
+    color: #333;
+    
+}
+
+#inputs {
+    grid-row: 1/1;
+    grid-column: 1 / 4;
+}
+
+#responses {
+    grid-row: 2/2;
+    grid-column: 1 / 4;
+}
+
+#Flight-Info {
+    grid-row: 4 /4;
+    grid-column: 1 / 4;
+}
+
+#Weather-Info {
+    grid-row: 5 /5;
+    grid-column: 1 / 4;
+}
+
+footer {
+    font-size: 20px;
+    color: #333;
+    grid-row: 7 / 7;
+    grid-column: 1 / 4;
+    
+}
+
+.border {
+    height: 20px;
+    background-color: #333; 
+}
+
+/* Style for Placeholder Text*/
+::placeholder { /* Firefox, Chrome, Opera */ 
+    color: #333; 
+    font-family: 'Oswald', sans-serif;
+
+} 
+  
+:-ms-input-placeholder { /* Internet Explorer 10-11 */ 
+    color: #333;  
+    font-family: 'Oswald', sans-serif;
+
+} 
+  
+::-ms-input-placeholder { /* Microsoft Edge */ 
+    color: #333;  
+    font-family: 'Oswald', sans-serif;
+}
+
+#button-date:hover {
+    background-color: #333
+}
+
+#button-trip:hover {
+    background-color: #333
+}
+
+#trip-input:hover {
+    background-color: #333
+}
+
+#date-input:hover {
+    background-color: #333
+}
