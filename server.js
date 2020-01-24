@@ -21,13 +21,13 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 /* Initializing the main project folder */
-app.use(express.static('website'));
+app.use(express.static('final-project'));
 const port = 8000;
 
 //creating a local server to allow the app to run locally
 const server = app.listen(port, listening);
-
 function listening() {
     console.log("your server is running bish");
     console.log(`running on localhost: ${port}`);
+
 }
