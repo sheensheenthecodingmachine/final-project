@@ -21,8 +21,8 @@ function getCityName(x){
 //send the value of trip-input to the GeoName Api in a Get Request
 // TODO-Async GET
 
-const getCityCoordinates = async (url= cityName, key)=>{
-    const repsonse = await fetch(longfunkyapiurl)
+const getCityCoordinates = async (url, cityName, key)=>{
+    const repsonse = await fetch(`${url}cityName=${cityName}&username=${key}`)
     try{
         const returnedData = await response.json();
         console.log(returnedData)
