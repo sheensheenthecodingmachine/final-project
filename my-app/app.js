@@ -1,5 +1,15 @@
 //client code represents all the code that the browser executes
 //client code represents all the code that the user will see
+//geonames API credentials
+let baseURL = 'http://api.animalinfo.org/data/?animal='
+let apiKey = '&appid=9f15e45060...';
+
+//document.getElementById('#button-trip').addEventListener('click', performAction);
+
+var test = document.getElementById("button-trip");
+test.onclick = function sayHi() {
+    console.log('Hi Sheen Machine');
+}
 
 //first Post Request
 const appSendServerData = async (url = '/', firstApiData = {})=>{

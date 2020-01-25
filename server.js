@@ -28,8 +28,6 @@ function listening() {
 
 }
 
-
-
 //A GET route (requests data) uses root url requesting 
 //to send the data from the js-object "firstApiData"
 
