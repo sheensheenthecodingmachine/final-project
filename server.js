@@ -33,8 +33,7 @@ response.send(firstApiData);
 //JS object for data endpoint for first API route
 const firstApiData = [];
 
-//a POST route 
-
+//a POST route - receieved data from the Post Route
 app.post('/', function storeSomething(req, res){
     firstApiData.push(req.body)
     console.log(firstApiData);

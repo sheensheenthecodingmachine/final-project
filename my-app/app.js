@@ -1,5 +1,3 @@
-//import { read } from "fs";
-
 //client code represents all the code that the browser executes
 //client code represents all the code that the user will see
 
@@ -8,9 +6,16 @@
 const url = 'http://api.geonames.org/citiesJSON?'
 const key = 'sheen';
 
+//event listen + retrival of browser input
+document.getElementById("button-trip").addEventListener('click', getCityName);
+function getCityName(x){
+    const cityName = document.getElementById("trip-input").value;
+    console.log(cityName);
+}
+//send the value of trip-input to the GeoName Api in a Get Request
 
 
-/* Function to POST data */
+/* Function to POST data along the Post route? */
 const appSendServerData = async (url = '/', firstApiData = {})=>{
     console.log(firstApiData)
     const response = await fetch(url,{
@@ -33,8 +38,6 @@ try {
 }
 
 appSendServerData('/', {cityName: "Toronto"})
-
-
 
 //testing event listeners
 var test = document.getElementById("button-trip");
