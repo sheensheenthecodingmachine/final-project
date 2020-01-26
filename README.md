@@ -13,7 +13,7 @@ npm start
 
 
 ##Start server:
-npm run
+node run
 
 ##To build the dist folder:
 npm run-build
