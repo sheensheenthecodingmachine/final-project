@@ -7,9 +7,12 @@ const key = "sheen"
 //const cityName = document.getElementById("trip-input").value
 
 //event listen + retrival of browser input
-document.getElementById("button-trip").addEventListener('click', getCityName);
-function getCityName(x){
+document.getElementById("vamos-button").addEventListener('click', displayInputs);
+function displayInputs(x){
     const cityName = document.getElementById("trip-input").value;
+    const date = document.getElementById("date-input").value;
+    document.getElementById('destination-output').textContent = cityName;
+    document.getElementById('departure-date-output').textContent = date;
 //send the value of trip-input to the GeoName Api
 // Async GET/fetch to api
 const getCityCoordinates = async (url, cityName, key)=>{
@@ -44,8 +47,6 @@ getCityCoordinates (url, cityName, key)
         try {
             const allData = await request.json()
             console.log(allData)
-            const cityName = document.getElementById("trip-input").value;
-        document.getElementById('destination-output').textContent = cityName;
         } catch(error){     
         console.log("error", error)
     }
@@ -70,13 +71,4 @@ const appSendServerData = async ( url = '/', firstApiData = {})=>{
       } catch(error) {
       console.log("error", error);
 }
-}
-
-// here you can update the ui so that trip-input.value displays in the app
-
-
-//testing event listeners
-var test = document.getElementById("button-trip");
-test.onclick = function sayHi() {
-    console.log('Hi Sheen Machine');
 }
