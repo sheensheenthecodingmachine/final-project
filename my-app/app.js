@@ -4,14 +4,12 @@
 //geonames API - function to send city name to API
 const url = "http://api.geonames.org/searchJSON?name="
 const key = "sheen"
-//const cityName = document.getElementById("trip-input").value
-
 //event listen + retrival of browser input
 document.getElementById("button-trip").addEventListener('click', getCityName);
 function getCityName(x){
-    const cityName = document.getElementById("trip-input").value;
+const cityName = document.getElementById("trip-input").value;
 //send the value of trip-input to the GeoName Api
-// Async GET/fetch to api
+// Async GET/fetch to GERONAMES api
 const getCityCoordinates = async (url, cityName, key)=>{
     const response = await fetch(`${url}${cityName}&maxRows=2&style=LONG&Lang=es&username=${key}`)
     try {
@@ -22,9 +20,7 @@ const getCityCoordinates = async (url, cityName, key)=>{
         console.log("error", error);
     }
 }
-/* Function to POST data along to save to our APP */
-// turn this into a then() function
-
+/* Function to convert data from JSON and send as an object along the POST route to the storage endpoint in the server */
 getCityCoordinates (url, cityName, key)
     .then(function(firstApiData){
         console.log(JSON.stringify(firstApiData));
@@ -32,18 +28,18 @@ getCityCoordinates (url, cityName, key)
         appSendServerData('/', {cityName: cityName, long: firstApiData.geonames[0].lng, lat: firstApiData.geonames[0].lat, country: firstApiData.geonames[0].countryName}
     )
     })
+    //then update the ui to display the destination
     .then(updateUI
 
     )
 }
-
     const updateUI = async () => {
     
         const request = await fetch('/data')
-        console.log(request)
+        //console.log(request)
         try {
             const allData = await request.json()
-            console.log(allData)
+        //console.log(allData)
             const cityName = document.getElementById("trip-input").value;
         document.getElementById('destination-output').textContent = cityName;
         } catch(error){     
@@ -72,9 +68,19 @@ const appSendServerData = async ( url = '/', firstApiData = {})=>{
 }
 }
 
-// here you can update the ui so that trip-input.value displays in the app
+//event listeners
 
+dateClickEventListener();
+function dateClickEventListener() {
+  document.getElementById("button-date").addEventListener('click', functionToGetDate);
+}
 
+  function functionToGetDate(x){
+  const getDate = document.getElementById("date-input").value;
+  document.getElementById("departure-date-output").textContent = getDate;
+  console.log(getDate)
+ 
+}
 //testing event listeners
 var test = document.getElementById("button-trip");
 test.onclick = function sayHi() {
