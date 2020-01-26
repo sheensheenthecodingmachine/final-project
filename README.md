@@ -12,12 +12,18 @@ npm install
 npm start
 
 
+
 ##Start server:
 npm run
+
+
 
 ##To build the dist folder:
 npm run-build
 
 
+
 ##View website in live preview:
 npm run-dev
+
+
