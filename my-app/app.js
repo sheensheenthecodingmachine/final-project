@@ -1,21 +1,19 @@
 //client code represents all the code that the browser executes
 //client code represents all the code that the user will see
 
-
-
 //geonames API - function to send city name to API
-const url = 'http://api.geonames.org/citiesJSON?'
-const key = 'sheen'
-const cityName = document.getElementById("trip-input").value;
+const url = "http://api.geonames.org/searchJSON?name="
+const key = "sheen"
+//const cityName = document.getElementById("trip-input").value
 
 //event listen + retrival of browser input
 document.getElementById("button-trip").addEventListener('click', getCityName);
 function getCityName(x){
-    //const cityName = document.getElementById("trip-input").value;
-//send the value of trip-input to the GeoName Api in a Get Request
-// TODO-Async GET
+    const cityName = document.getElementById("trip-input").value;
+//send the value of trip-input to the GeoName Api
+// Async GET/fetch to api
 const getCityCoordinates = async (url, cityName, key)=>{
-    const response = await fetch(`${url}cityName=${cityName}&username=${key}`)
+    const response = await fetch(`${url}${cityName}&maxRows=2&style=LONG&Lang=es&username=${key}`)
     try {
         const returnedData = await response.json();
         console.log(returnedData)
@@ -26,35 +24,32 @@ const getCityCoordinates = async (url, cityName, key)=>{
 }
 /* Function to POST data along to save to our APP */
 // turn this into a then() function
-//const cityName = document.getElementById("trip-input").value;
+
 getCityCoordinates (url, cityName, key)
     .then(function(firstApiData){
         console.log(JSON.stringify(firstApiData));
         console.log(firstApiData , "recieved from API")
-        appSendServerData('/', {cityName: cityName, long: "firstApiData.longdituge", lat: "firstApiData.lat", country: "firstApiData.country"}
-    );
-    
-    console.log("did this work");
-
+        appSendServerData('/', {cityName: cityName, long: firstApiData.geonames[0].lng, lat: firstApiData.geonames[0].lat, country: firstApiData.geonames[0].countryName}
+    )
     })
-
-    .then(updateUI()
+    .then(updateUI
 
     )
 }
 
     const updateUI = async () => {
     
-        const request = await fetch('/')
+        const request = await fetch('/data')
+        console.log(request)
         try {
             const allData = await request.json()
             console.log(allData)
-        document.getElementById('destination-output').innerHTML = allData[0].cityName;
-        
-        } catch(error){
-            console.log("error", error)
-        }
+            const cityName = document.getElementById("trip-input").value;
+        document.getElementById('destination-output').textContent = cityName;
+        } catch(error){     
+        console.log("error", error)
     }
+}
 /* Function to POST data */
 const appSendServerData = async ( url = '/', firstApiData = {})=>{
       const response = await fetch(url, {

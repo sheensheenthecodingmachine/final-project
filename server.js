@@ -26,8 +26,9 @@ function listening() {
 }
 
 //A GET route (requests data)
-app.get('/', function getSomething (res, res){
-response.send(firstApiData);
+app.get('/data', function getSomething (res, res){
+console.log(firstApiData)
+res.send(firstApiData);
 }); 
 
 //JS object for data endpoint for first API route
@@ -36,15 +37,23 @@ const firstApiData = [];
 //a POST route - store data recieved to app endpoint
 //add the send data to our app
 app.post('/', storeSomething);
-function storeSomething(req, res){
+async function storeSomething(req, res){
+  const futureWeather = await darkSkyApi(lat, lng)
   storage = { 
+    
     cityName: req.body.cityName, 
-    long: "firstApiData.longdituge", 
-    lat: "firstApiData.lat", 
-    country: "firstApiData.country"
+    long: req.body.long, 
+    lat: req.body.lat, 
+    country: req.body.country
   }
 
     firstApiData.push(storage)
     console.log(firstApiData)
 }
 
+// build dark sky api async function
+
+async function darkSkyApi(lat, lng){
+
+  return futureWeather 
+}
