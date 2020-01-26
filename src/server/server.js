@@ -16,7 +16,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 /* Initializing the main project folder */
-app.use(express.static('my-app'));
+app.use(express.static('client'));
 const port = 8000;
 
 //creating a local server to allow the app to run locally
