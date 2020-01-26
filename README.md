@@ -1,14 +1,29 @@
-#Demo
+#Weather-Journal App Project
+This project is the capstone for my Front End Developer course @ Udacity.
+
+#Installation
+Use the package manager Node.js to install all dependencies.
+
+npm install
 
 
-My Final Project for Udacity
+#Usage
+##Start host server:
+npm start
 
-One Paragraph of project description goes here
+
+
+##Start server:
+npm run
 
 
 
-Authors
-Sheena Antonios
+##To build the dist folder:
+npm run-build
 
-Acknowledgments
-Hat tip to 
+
+
+##View website in live preview:
+npm run-dev
+
+
