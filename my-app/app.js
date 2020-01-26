@@ -6,6 +6,7 @@
 //geonames API - function to send city name to API
 const url = 'http://api.geonames.org/citiesJSON?'
 const key = 'sheen'
+const cityName = document.getElementById("trip-input").value;
 
 //event listen + retrival of browser input
 document.getElementById("button-trip").addEventListener('click', getCityName);
@@ -16,11 +17,8 @@ function getCityName(x){
 
 }
 
-// here you can update the ui so that trip-input.value displays in the app
-
 //send the value of trip-input to the GeoName Api in a Get Request
 // TODO-Async GET
-
 const getCityCoordinates = async (url, cityName, key)=>{
     const repsonse = await fetch(`${url}cityName=${cityName}&username=${key}`)
     try{
@@ -30,8 +28,7 @@ const getCityCoordinates = async (url, cityName, key)=>{
         console.log("error", error);
     }
 }
-
-/* Function to POST data along the Post route? */
+/* Function to POST data along to save to our APP */
 const appSendServerData = async (url = '/', firstApiData = {})=>{
     console.log(firstApiData)
     const response = await fetch(url,{
@@ -53,7 +50,11 @@ try {
 }
 }
 
-appSendServerData('/', {cityName: "Toronto"})
+appSendServerData('/', {cityName: cityName, long: "firstApiData.longdituge", lat: "firstApiData.lat", country: "firstApiData.country"})
+
+
+// here you can update the ui so that trip-input.value displays in the app
+
 
 //testing event listeners
 var test = document.getElementById("button-trip");
