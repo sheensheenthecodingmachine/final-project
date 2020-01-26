@@ -26,8 +26,8 @@ function listening() {
 }
 
 //A GET route (requests data)
-app.get('/data', function getFirstApiData (res, req){
-console.log(firstApiData)
+app.get('/data', function getFirstApiData(res, req){
+//console.log(firstApiData)
 res.send(firstApiData);
 }); 
 
@@ -63,7 +63,7 @@ const darkSkyURL = "https://api.darksky.net/forecast/"
 const getFutureWeatherFromApi = async (darkSkyURL, long, lat, darkSkyKey, getDate)=>{
   const response = await fetch(`${darkSkyURL}${darkSkyKey}/${lat},${long},${getDate}`)
   try {
-      const WeatherData = await response.json();
+      const WeatherData = await response.json()
       console.log(WeatherData)
       return WeatherData;
   } catch(error){
