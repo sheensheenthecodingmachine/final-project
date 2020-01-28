@@ -38,7 +38,7 @@ res.send(allData);
 
 //A GET route (sends data from the storage center?)
 app.get('/data', function sendSomething (res, req){
-  res.send(allData.long, allData.lat, allData.date);
+  res.send(allData);
   }); 
 
 //a POST route - store data recieved to app endpoint
@@ -51,8 +51,12 @@ function storeSomething(req, res){
     long: req.body.long, 
     lat: req.body.lat, 
     country: req.body.country,
-    date: req.body.date
-  }
+    date: req.body.date,
+    timezone: "", 
+    high: "",
+    low:  "",
+    summar: "",
+    }
 
     allData.push(storage)
     console.log(allData)
