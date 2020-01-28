@@ -16,7 +16,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 /* Initializing the main project folder */
-app.use(express.static('client'));
+app.use(express.static('dist'));
+
 const port = 8000;
 
 //creating a local server to allow the app to run locally
@@ -26,6 +27,8 @@ function listening() {
     console.log(`running on localhost: ${port}`);
 }
 
+app.get('/', function (req, res) {
+  res.sendFile("dist/index.html")
 
 //JS object for data endpoint for first API route
 const allData = [];
