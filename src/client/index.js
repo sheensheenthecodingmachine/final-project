@@ -1,3 +1,5 @@
+import './styles/resets.scss'
+
 import {
         fetchDaWeather 
     
