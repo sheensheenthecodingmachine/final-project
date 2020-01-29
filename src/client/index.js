@@ -1,20 +1,25 @@
-import './styles/resets.scss'
+import './styles/style.scss'
 
-import {
-        fetchDaWeather 
+// import {
+//         fetchDaWeather 
     
-} from "./client/js/darkSky.js"
+// } from "./js/darkSky.js"
 
 
-import {
-    appSendServerData
-} from './client/js/postRoute.js'
+// import {
+//     appSendServerData
+// } from './js/postRoute.js'
 
-import {
-    displayInputs
-} from './client/js/geoNames.js'
+// import {
+//     displayInputs
+// } from './js/geoNames.js'
 
 
-import {
-    fetchAPhoto
-} from './client/js.pixaBay.js'
+// import {
+//     fetchAPhoto
+// } from './js.pixaBay.js'
+
+
+// app.listen(8080, function() {
+//     console.log("I am the second server running on 8080")
+// })

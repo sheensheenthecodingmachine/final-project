@@ -11,9 +11,10 @@ function displayInputs(x){
     const date = document.getElementById("date-input").value;
     document.getElementById('destination-output').textContent = cityName;
     document.getElementById('departure-date-output').textContent = date;
+}
 //send the value of trip-input to the GeoName Api
 // Async GET/fetch to api
-const getCityCoordinates = async (url, cityName, key)=>{
+const getCityCoordinates = async (cityName)=>{
     const response = await fetch(`${url}${cityName}&maxRows=2&style=LONG&Lang=es&username=${key}`)
     try {
         const returnedData = await response.json();
@@ -25,15 +26,16 @@ const getCityCoordinates = async (url, cityName, key)=>{
 }
 /* Function to POST data along to save to our APP */
 // turn this into a then() function
-getCityCoordinates (url, cityName, key)
-    .then(function(firstApiData){
-        console.log(JSON.stringify(firstApiData));
-        console.log(firstApiData , "recieved from API")
-        appSendServerData('/', {cityName: cityName, long: firstApiData.geonames[0].lng, lat: firstApiData.geonames[0].lat, country: firstApiData.geonames[0].countryName, date: date}
-    )
-    })
-}
+// getCityCoordinates (url, cityName, key)
+//     .then(function(firstApiData){
+//         console.log(JSON.stringify(firstApiData));
+//         console.log(firstApiData , "recieved from API")
+//         appSendServerData('/', {cityName: cityName, long: firstApiData.geonames[0].lng, lat: firstApiData.geonames[0].lat, country: firstApiData.geonames[0].countryName, date: date}
+//     )
+//     })
+// }
 
 export {
-    displayInputs
+    displayInputs,
+    getCityCoordinates
 }

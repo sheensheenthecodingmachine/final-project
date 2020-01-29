@@ -31,7 +31,8 @@ function listening() {
 }
 
 app.get('/', function (req, res) {
-  res.sendFile("dist/index.html")
+  res.sendFile("dist/index.html");
+})
 
 //JS object for data endpoint for first API route
 const allData = [];
@@ -61,9 +62,12 @@ function storeSomething(req, res){
     timezone: "", 
     high: "",
     low:  "",
-    summar: "",
+    summary: "",
     }
 
     allData.push(storage)
     console.log(allData)
 }
+
+
+//add darksky api here 
