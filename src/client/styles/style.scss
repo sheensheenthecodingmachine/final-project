@@ -83,8 +83,13 @@ footer {
     font-family: 'Oswald', sans-serif;
 }
 
-#button-date:hover {
-    background-color: #333
+#button-date {
+    background-color: turquoise;
+
+    &:hover {
+        background-color: #333;
+
+    }
 }
 
 #button-trip:hover {

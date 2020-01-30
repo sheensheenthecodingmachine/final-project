@@ -9,6 +9,9 @@ const app = express();
 const cors = require('cors');
 app.use(cors());
 
+const path = require('path');
+
+
 //dependencies
 const bodyParser = require('body-parser');
 //middleware - configure express to use body-parser as middle-ware
@@ -16,7 +19,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 /* Initializing the main project folder */
-app.use(express.static('client'));
+app.use(express.static('dist'));
+
 const port = 8000;
 
 //creating a local server to allow the app to run locally
@@ -26,6 +30,9 @@ function listening() {
     console.log(`running on localhost: ${port}`);
 }
 
+app.get('/', function (req, res) {
+  res.sendFile("dist/index.html");
+})
 
 //JS object for data endpoint for first API route
 const allData = [];
@@ -38,7 +45,7 @@ res.send(allData);
 
 //A GET route (sends data from the storage center?)
 app.get('/data', function sendSomething (res, req){
-  res.send(allData.long, allData.lat, allData.date);
+  res.send(allData);
   }); 
 
 //a POST route - store data recieved to app endpoint
@@ -51,9 +58,16 @@ function storeSomething(req, res){
     long: req.body.long, 
     lat: req.body.lat, 
     country: req.body.country,
-    date: req.body.date
-  }
+    date: req.body.date,
+    timezone: "", 
+    high: "",
+    low:  "",
+    summary: "",
+    }
 
     allData.push(storage)
     console.log(allData)
 }
+
+
+//add darksky api here 
