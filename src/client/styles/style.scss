@@ -52,6 +52,13 @@ h1 {
     grid-column: 1 / 4;
 }
 
+#image {
+    grid-row: 6/6;
+    grid-column: 1 / 4;
+    height: auto;
+    width: auto;
+}
+
 footer {
     font-size: 20px;
     color: #333;
@@ -93,13 +100,13 @@ footer {
 }
 
 #button-trip:hover {
-    background-color: #333
+    background-color: #fdfd69
 }
 
 #trip-input:hover {
-    background-color: #333
+    background-color: #fdfd69
 }
 
 #date-input:hover {
-    background-color: #333
+    background-color: #fdfd69
 }

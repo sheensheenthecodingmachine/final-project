@@ -27,6 +27,7 @@ const createApp = () =>
     .use(cors())
     .use(bodyParser.json())
     .use(express.static("dist"))
+    .use("/img", express.static("src/client/img"))
     .post("/", doThatThing)
     //.get("/", (_req, res) => res.sendFile(path.resolve("./src/client/views/index.html")))
 

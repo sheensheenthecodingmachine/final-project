@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 
 <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet" rel="stylesheet">
-<link rel="stylesheet" href="../styles/style.scss">
+
 </head>
  <body>
 <header>
@@ -52,21 +52,29 @@
      <div id = "high"> temp hight will go here </div> 
     <div id = "low">temp low will go here</div>
     <div id = "description">weather desctiption will go here</div>
-    <div id="weather-icon" width="128" height="128"></canvas>=
+    <div id="weather-icon" width="128" height="128">a weather icon will go here</canvas>
 
   </div>
 
-  <div id = "image">
-      <h2> maybe an image goes here?</h2>
+  <div id ="image">
+      <h2> An image of your destination will go here</h2>
   </div>
   </div>
   </div>
   <footer>
-    <p>This page uses Simple Dark Sky Weather API icons (license: Attribution 3.0 Unported (CC BY 3.0))</p>
+    <p> you are a footer 👩🏻‍💻 </p>
     <div class="border"></div>
 </footer>
 <script src="/src/client/index.js" type="text/javascript"></script>
-
+<script>
+  // Check that service workers are supported
+  if ('serviceWorker' in navigator) {
+      // Use the window load event to keep the page load performant
+      window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/service-worker.js');
+      });
+  }
+</script>
 
 </body>
 </html>
