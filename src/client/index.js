@@ -1,3 +1,5 @@
+import './styles/style.scss'
+
 document.getElementById('vamos-button').addEventListener('click', () => {
      const cityName = document.getElementById('trip-input').value;
      const date = document.getElementById('date-input').value;
@@ -17,7 +19,7 @@ document.getElementById('vamos-button').addEventListener('click', () => {
      document.getElementById('low').textContent = `Low: ${low}`;
      document.getElementById('description').textContent = `${summary}`;
      document.getElementById('image').innerHTML = `<img src="${picture}">`;
-     document.getElementById('weather-icon').innerHTML = `<img src="/img/${icon}.svg">`;
+     document.getElementById('weather-icon').innerHTML = `<img src="http://localhost:8081/img/${icon}.svg">`;
  }
      
  const postData = async ( url, data)=>{
@@ -35,4 +37,4 @@ document.getElementById('vamos-button').addEventListener('click', () => {
      }
  }
 
- import './styles/style.scss'
+
