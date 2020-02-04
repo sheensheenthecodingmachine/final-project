@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node src/server/server.js",
+    "test": "jest",
+    "start": "node src/server/index.js",
     "build-prod": "webpack --config webpack.prod.js",
     "build-dev": "rm -rf dist && webpack-dev-server --config webpack.dev.js --open"
   },
@@ -14,17 +14,22 @@
   "description": "",
   "dependencies": {
     "express": "^4.17.1",
+    "jest": "^25.1.0",
+    "node-fetch": "^2.6.0",
     "path": "^0.12.7",
+    "skycons": "^1.0.0",
     "webpack": "^4.41.5",
     "webpack-cli": "^3.3.10",
     "webpack-dev-server": "^3.10.1"
   },
   "devDependencies": {
     "@babel/core": "^7.8.3",
+    "@babel/plugin-transform-runtime": "^7.8.3",
     "@babel/preset-env": "^7.8.3",
     "babel-loader": "^8.0.6",
     "clean-webpack-plugin": "^3.0.0",
     "css-loader": "^3.4.2",
+    "exports-loader": "^0.7.0",
     "html-webpack-plugin": "^3.2.0",
     "node-sass": "^4.13.1",
     "sass-loader": "^8.0.2",
