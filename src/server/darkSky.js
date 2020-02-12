@@ -1,8 +1,11 @@
 const fetch = require('node-fetch');
 
+//darkSky Api credentiasl
 const darkSkyUrl = 'https://api.darksky.net/forecast/';
 const darkSkyKey = '8918b1ff9b6bb1785f2e10bf7b7005fe';
 
+
+//darkSky function to ketch the lat, long and date based on inputs
 const fetchDaWeather = async (lat, long, timestamp) => {
     try {
         const convertedTime = ~~(timestamp/1000);
@@ -17,6 +20,7 @@ const fetchDaWeather = async (lat, long, timestamp) => {
           };
         return filteredData;
     } catch(error){
+
         console.log("error", error);
     }
 }

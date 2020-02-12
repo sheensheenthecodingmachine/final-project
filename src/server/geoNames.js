@@ -1,8 +1,11 @@
 const fetch = require('node-fetch');
 
+//geoname API credentials
 const url = "http://api.geonames.org/searchJSON?name="
 const key = "sheen"
 
+
+//function to give a city name and receive the coordinates and country
 const getCityCoordinates = async (cityName)=>{
     const response = await fetch(`${url}${encodeURIComponent(cityName)}&maxRows=2&style=LONG&Lang=es&username=${key}`)
     try {

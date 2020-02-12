@@ -1,29 +1,28 @@
 #Weather-Journal App Project
 This project is the capstone for my Front End Developer course @ Udacity.
 
-#Installation
-Use the package manager Node.js to install all dependencies.
-
+#Installation of depencencies
 npm install
 
 
 #Usage
-##Start host server:
+##Start server:
 npm start
 
 
+##To start the development server:
+npm run build-dev
 
-##Start server:
-node run
+##to start the tests 
+npm test
 
+##App Description
+this app is designed to allow users to input a date and a destination and to recieve the weather for the date provided at the location provided as well as a photo of the destination.
 
+##Extra Spice
+The extra "Extend your Project/Ways to Stand Out" that I have chosen is to add the weather icon associated with the weather forecast to my UI
 
-##To build the dist folder:
-npm run-build
-
-
-
-##View website in live preview:
-npm run-dev
+##
+Thanks for viewing
 
 
