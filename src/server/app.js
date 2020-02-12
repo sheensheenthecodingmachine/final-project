@@ -1,3 +1,5 @@
+
+// setting up an instance of my app
 const path = require("path");
 const express = require("express");
 var bodyParser = require("body-parser");
